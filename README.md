@@ -12,6 +12,10 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 * Fast backend using Redis.
 * Built in 3 days!
 
+## Screenshot
+
+<img src="http://i.imgur.com/uXXOGsP.png" alt="Super Chatendo Entertainment System" />
+
 ## Install and Run
 
 * `sudo apt install nodejs redis`
