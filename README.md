@@ -6,14 +6,14 @@ Written by Nathaniel Sabanski.
 
 Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 
+## Screenshot
+
+<img src="http://i.imgur.com/vwD7Xxd.png" alt="Super Chatendo Entertainment System" />
+
 ## Features
 
 * Real time Twitch/Slack chat demo with lobby, emotes and colorful user sessions.
 * Backend using Redis.
-
-## Screenshot
-
-<img src="http://i.imgur.com/vwD7Xxd.png" alt="Super Chatendo Entertainment System" />
 
 ## Install and Run
 
