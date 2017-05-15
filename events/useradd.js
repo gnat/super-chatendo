@@ -22,7 +22,7 @@ exports.index = function(app, io, redis, config) {
       var tag = "user:" + socket.id;
       var obj = new Object();
       obj.username = message;
-      obj.color = color.randomColor();
+      obj.color = color.randomColor({ luminosity: 'dark' });
       obj.room = 'blah';
 
       // Add to client's lobby immediately.
