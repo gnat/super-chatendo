@@ -13,7 +13,7 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 
 ## Screenshot
 
-<img src="http://i.imgur.com/4yaU3KU.png" alt="Super Chatendo Entertainment System" />
+<img src="http://i.imgur.com/vwD7Xxd.png" alt="Super Chatendo Entertainment System" />
 
 ## Install and Run
 
