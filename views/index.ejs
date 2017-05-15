@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Super Chatendo Entertainment System Demo</title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src="/js/emotes.js"></script>
+		<script src="/js/main.js"></script>
+	</head>
+	<body>
+		<div id="modal">
+			<div>
+				Enter a Nickname: <form action=""><input id="username" autocomplete="off" /></form>
+			</div>
+		</div>
+		<div class="container">
+			<div class="header">
+				Super Chatendo Entertainment System <span class="micon">chat</span>
+			</div>
+			<div class="participants">
+				<li>blah</li>
+				<li>blah</li>
+				<li>giraffe</li>
+			</div>
+			<div class="chat">
+				<h1>Embeddable real time Twitch/Slack chat demo with lobby, emotes and simple user sessions. For source see: <a href="http://github.com/gnat/super-chatendo" target="_blank">github.com/gnat/super-chatendo</a></h1>
+				<ul id="messages">
+				</ul>
+				<form action="">
+					<input id="m" autocomplete="off" />
+					<button class="send">
+						<span class="micon">arrow_upward</span>
+					</button>
+					<button class="emotes">
+						<span class="micon">mood</span>
+						<div class="emotes close">
+						</div>
+					</button>
+					<button class="toggle_participants">
+						<span class="micon">people</span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

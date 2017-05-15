@@ -1,0 +1,42 @@
+{
+  "name": "super-chatendo",
+  "version": "1.0.0",
+  "description": "Embeddable real time Twitch-Slack chat demo.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "test": "echo \"Error: tests currently not available\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnat/super-chatendo.git"
+  },
+  "keywords": [
+    "chat",
+    "twitch",
+    "slack",
+    "web",
+    "sockets",
+    "real",
+    "time",
+    "embed"
+  ],
+  "author": "Nathaniel Sabanski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnat/super-chatendo/issues"
+  },
+  "homepage": "https://github.com/gnat/super-chatendo#readme",
+  "dependencies": {
+    "async": "^2.4.0",
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "html-entities": "^1.2.1",
+    "ioredis": "^2.5.0",
+    "method-override": "^2.3.8",
+    "morgan": "^1.8.1",
+    "randomcolor": "^0.5.2",
+    "socket.io": "^2.0.1"
+  }
+}

@@ -1,0 +1,263 @@
+/* General */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font: 12px Helvetica, Arial, sans-serif;
+  background: #292929;
+  height: 100%;
+  background-image: url(http://i.imgur.com/Uz8E6jS.png);
+}
+
+a {
+  color: #DD6400;
+}
+
+h1 {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 8px 6px;
+  color: #666;
+}
+
+.micon {
+  font-family: 'Material Icons';
+  font-size: 14px;
+}
+
+/* Areas */
+
+.container {
+  box-shadow: 0px 0px 26px -2px rgba(0, 0, 0, 1.0);
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  background: #dcdcdc;
+}
+
+.header {
+  background: rgb(56, 55, 55);
+  font-size: 20px;
+  color: #999;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  font-family: "bebas neue";
+  font-weight: bold;
+  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 1);
+}
+
+.chat {
+  position: relative;
+  transition: 1s;
+  height: calc(100% - 40px - 56px);
+  overflow: hidden;
+  overflow-y: auto;
+  margin-right: 200px;
+}
+
+.chat.close {
+  margin-right: 0;
+}
+
+.participants {
+  float: right;
+  color: #666;
+  transition: 1s;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  height: calc(100% - 40px - 56px);
+  white-space: nowrap;
+  list-style-type: none;
+  padding: 5px;
+  box-shadow: 0px 0px 24px -2px rgba(0, 0, 0, .2);
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.participants.close {
+  width: 0px;
+  padding: 0;
+}
+
+.participants li {
+  padding: 2px;
+}
+
+/* Header */
+
+.header .micon {
+  color: #c73a03;
+  padding-left: 2px;
+}
+/* Chat entry CSS */
+
+.chat form {
+  background: #383838;
+  bottom: 0;
+  padding: 0;
+  position: fixed;
+  width: 80%;
+  display: flex;
+}
+
+.chat form input {
+  padding: 10px;
+  background: #eee;
+  border-radius: 10px 0 0 10px;
+  margin: 8px;
+  margin-right: 0;
+  outline: none;
+  height: 38px;
+  border: none;
+  width: 79%;
+  flex: 1;
+}
+
+.chat form input:focus {
+  background: #fff;
+}
+
+.chat form button {
+  transition: 0.2s;
+  width: 80px;
+  border-radius: 0 10px 10px 0;
+  color: #e4e4e4;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  height: 38px;
+  line-height: 38px;
+  vertical-align: top;
+  margin: 8px;
+  margin-left: 0;
+  background: none;
+}
+
+.chat form button.send {
+  background: #585858;
+}
+
+.chat form button:hover,
+.chat form button.active {
+  color: #DD6400;
+}
+
+.chat form .micon {
+  font-size: 30px;
+}
+
+/* Messages CSS */
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#messages li {
+  padding: 0;
+  margin: 1px;
+  display: flex;
+}
+
+#messages li span.name {
+  padding: 5px 10px;
+  background: rgba(255, 0, 0, 0.2);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+  padding-right: 10px;
+  color: white;
+  flex: 0 1 auto;
+}
+
+#messages li span.message {
+  padding: 5px 10px;
+  flex: 0 1 auto;
+}
+
+#messages li:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal Login */
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#modal div {
+  background-color: #fdfdfd;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0px 0px 24px -2px rgba(0, 0, 0, .5);
+  text-align: center;
+  position: relative;
+  top: 50%;
+  border-radius: 10px;
+  color: #777;
+}
+
+#modal div form {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+/* Emotes */
+
+.chat form button.emotes {
+  position: relative;
+  display: inline-block;
+}
+
+div.emotes {
+  position: absolute;
+  background-color: #c5c5c5;
+  min-width: 80px;
+  box-shadow: 0px 0px 2px 0px rgb(202, 202, 202);
+  padding: 20px 2px 10px 2px;
+  z-index: 5;
+  bottom: 50px;
+  list-style-type: none;
+  overflow-y: auto;
+  background: rgb(241, 241, 241);
+  border-radius: 10px;
+  display: none;
+}
+
+.chat form button.emotes div.emotes li img {
+  transition: 1s;
+}
+
+.chat form button.emotes div.emotes li:hover img {
+  transform: scale(1.3, 1.3);
+  transition: 0.5s;
+}
+
+/* Fonts */
+@font-face {
+font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: bold
+  src: local('Bebas Neue'), url('/fonts/BebasNeue.woff') format('woff');
+}
+
