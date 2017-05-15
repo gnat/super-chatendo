@@ -9,12 +9,11 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 ## Features
 
 * Real time Twitch/Slack chat demo with lobby, emotes and colorful user sessions.
-* Fast backend using Redis.
-* Built in 3 days!
+* Backend using Redis.
 
 ## Screenshot
 
-<img src="http://i.imgur.com/uXXOGsP.png" alt="Super Chatendo Entertainment System" />
+<img src="http://i.imgur.com/4yaU3KU.png" alt="Super Chatendo Entertainment System" />
 
 ## Install and Run
 
