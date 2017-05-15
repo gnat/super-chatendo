@@ -8,7 +8,7 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 
 ## Features
 
-* Real time Twitch, Slack style chat demo with lobby panel, emotes and cached chat history.
+* Real time Twitch/Slack chat demo with lobby, emotes and colorful user sessions.
 * Fast backend using Redis.
 * Built in 3 days!
 
