@@ -50,7 +50,7 @@ h1 {
   height: 40px;
   line-height: 40px;
   padding: 0 20px;
-  font-family: "bebas neue";
+  font-family: 'BebasNeue';
   font-weight: bold;
   box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 1);
 }
@@ -251,13 +251,5 @@ div.emotes {
 .chat form button.emotes div.emotes li:hover img {
   transform: scale(1.3, 1.3);
   transition: 0.5s;
-}
-
-/* Fonts */
-@font-face {
-font-family: 'Bebas Neue';
-font-style: normal;
-font-weight: bold
-  src: local('Bebas Neue'), url('/fonts/BebasNeue.woff') format('woff');
 }
 
