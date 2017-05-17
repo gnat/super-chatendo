@@ -1,5 +1,5 @@
 // Main front-end logic for Super Chatendo
-// Requires: jQuery, socket.io
+// Requires: jQuery, Socket.io
 
 var modal;
 var username = null;
@@ -88,7 +88,7 @@ function eventsSocketIO() {
 	socket.on('chatmessage', function(message){
 		// Convert hex to RGB for alpha channel.
 		rgb = hex2rgb(message.color);
-		message.message = insertEmotes(message.message);		
+		message.message = insertEmotes(message.message);    
 		element = '<span class="name" style="background: rgba('+rgb[0]+','+rgb[1]+','+rgb[2]+',0.5);">'+message.username+'</span><span class="message">'+message.message+'</span>';
 		$('#messages').append($('<li>').html(element));
 
@@ -114,18 +114,18 @@ function eventsSocketIO() {
  * @return Color
  */
 function hex2rgb(hexStr){
-    // note: hexStr should be #rrggbb
-    var hex = parseInt(hexStr.substring(1), 16);
-    var r = (hex & 0xff0000) >> 16;
-    var g = (hex & 0x00ff00) >> 8;
-    var b = hex & 0x0000ff;
-    return [r, g, b];
+		// note: hexStr should be #rrggbb
+		var hex = parseInt(hexStr.substring(1), 16);
+		var r = (hex & 0xff0000) >> 16;
+		var g = (hex & 0x00ff00) >> 8;
+		var b = hex & 0x0000ff;
+		return [r, g, b];
 }
 
 // On document load.
 $(document).ready(function() {
 	// Populate emoticons.
-	$('div.emotes').append(returnEmotes());
+	$('div.emotes').append(listEmotes());
 
 	eventsSocketIO();
 	eventsInterface();

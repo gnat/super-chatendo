@@ -9,6 +9,8 @@ var emotes = {
 
 /**
  * Insert emotes into message using emote dictionary.
+ * @param {string} message Message before emotes.
+ * @return {string} Message after emotes.
  */
 function insertEmotes(message) {
 	for (var key in emotes) {
@@ -23,8 +25,9 @@ function insertEmotes(message) {
 
 /**
  * Generate emotes list for emote selector.
+ * @return {string} Emote list HTML.
  */
-function returnEmotes() {
+function listEmotes() {
 	var output = '';
 
 	for (var key in emotes) {

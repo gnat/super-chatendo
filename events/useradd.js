@@ -1,13 +1,17 @@
-/**
- * User Add endpoint for Socket.io.
- */
-
 // Random color generator.
 var color = require('randomcolor');
 // User input sanitisation.
 const Entities = require('html-entities').XmlEntities;
 const entities = new Entities();
 
+/**
+ * Add a User and give them a random color.
+ * Endpoint for Socket.io.
+ * @param {Object} app App instance.
+ * @param {Object} io Socket.io instance.
+ * @param {Object} redis Redis instance.
+ * @param {Object} config Config instance.
+ */
 exports.index = function(app, io, redis, config) {
   io.sockets.on('connection', function(socket) {
     socket.on('useradd', function(message) {

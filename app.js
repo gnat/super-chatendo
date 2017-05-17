@@ -59,6 +59,3 @@ app.use(function errorHandler(err, req, res, next) {
   //if(req.app.get('env') !== 'development') res.locals.error = 'Please contact the developer!';
   res.status(500).render('error'); // Render error page.
 });
-
-// Server init handled in /bin/www. Allows for importing app for test suite, etc.
-//module.exports = app;
