@@ -1,11 +1,15 @@
-/**
- * User Chat Message endpoint for Socket.io.
- */
-
 // User input sanitisation.
 const Entities = require('html-entities').XmlEntities;
 const entities = new Entities();
 
+/**
+ * User chat message handling.
+ * Endpoint for Socket.io.
+ * @param {Object} app App instance.
+ * @param {Object} io Socket.io instance.
+ * @param {Object} redis Redis instance.
+ * @param {Object} config Config instance.
+ */
 exports.index = function(app, io, redis, config) {
   io.sockets.on('connection', function(socket) {
     socket.on('chatmessage', function(message) {
