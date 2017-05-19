@@ -1,5 +1,6 @@
 var config = {
   PORT: getEnv('PORT', 3000),
+  URL: getEnv('URL', 'http://localhost:' + getEnv('PORT', 3000)),
   REDISPORT: getEnv('REDISPORT', 6379),
   REDISURL: getEnv('REDISURL', 'localhost'),
   MESSAGE_MAX_LENGTH: getEnv('MESSAGE_MAX_LENGTH', 3000),

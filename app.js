@@ -11,7 +11,6 @@ var Redis = require('ioredis');
 
 // Configuration.
 var config = require('./config/config');
-var base_url = process.env.BASE_URL || 'http://localhost:' + config.PORT;
 
 // Setup.
 var app = express();
@@ -20,7 +19,7 @@ app.set('port', config.PORT);
 // Listen on provided port, on all network interfaces.
 var server = app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + server.address().port);
-})
+});
 
 // Setup Socket.io and Redis.
 var io = socketio(server);
@@ -56,6 +55,5 @@ app.use(function consoleErrorHandler(err, req, res, next) {
 app.use(function errorHandler(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = err;
-  //if(req.app.get('env') !== 'development') res.locals.error = 'Please contact the developer!';
   res.status(500).render('error'); // Render error page.
 });
