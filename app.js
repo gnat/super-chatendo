@@ -23,7 +23,7 @@ var server = app.listen(app.get('port'), function() {
 
 // Setup Socket.io and Redis.
 var io = socketio(server);
-var redis = Redis(config.REDISPORT);
+var redis = Redis(config.REDISPORT, config.REDISURL);
 
 // View engine setup.
 app.set('view engine', 'ejs');
