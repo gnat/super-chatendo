@@ -1,0 +1,36 @@
+version: '3'
+services:
+  superchatendo:
+    build: ./
+    environment:
+      - NODE_ENV=production
+      - REDISURL=redis
+    volumes:
+      - ./:/home/node/app
+    expose:
+      - "3000"
+    networks:
+      - default
+    depends_on:
+      - redis
+  redis:
+    image: 'bitnami/redis:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    expose:
+      - "6379"
+    networks:
+      - default
+  nginx:
+    image: nginx:1.15.9
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+      - ./:/opt/demo/superchatendo
+    networks:
+      - default
+    depends_on:
+      - superchatendo
+networks:
+  default:
