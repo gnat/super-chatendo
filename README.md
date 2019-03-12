@@ -31,8 +31,6 @@ And point your browser to `http://localhost:3000`. Optionally, specify a port by
 
 Optionally run Super Chatendo in a container using Docker.
 
-https://img.shields.io/docker/cloud/build/sabanski/super-chatendo.svg
-
 Fully automated setup using Docker Compose. Includes Redis and Nginx reverse proxy.
 
 * `sudo docker-compose build && sudo docker-compose up --force-recreate --remove-orphans`
