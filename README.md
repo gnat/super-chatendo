@@ -15,7 +15,7 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 * Real time Twitch/Slack chat demo with lobby, emotes and colorful user sessions.
 * Backend using Redis.
 
-## Install and Run
+## Run
 
 * `sudo apt install nodejs redis`
 * `git clone https://github.com/gnat/super-chatendo.git .`
@@ -24,3 +24,15 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 * `npm start`
 
 And point your browser to `http://localhost:3000`. Optionally, specify a port by supplying the `PORT` env variable.
+
+## Docker
+
+Optionally run Super Chatendo in a container using Docker.
+
+Fully automated setup using Docker Compose. Includes Redis and Nginx reverse proxy.
+
+* `sudo docker-compose build && sudo docker-compose up --force-recreate --remove-orphans`
+
+Or bare Node.js app only. You provide your own Redis server.
+
+* `sudo docker build -t superchatendo --no-cache . && sudo docker run -p80:3000 -d superchatendo`
