@@ -25,7 +25,9 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 
 And point your browser to `http://localhost:3000`. Optionally, specify a port by supplying the `PORT` env variable.
 
-## Docker
+## Run using Docker
+
+<a href="https://cloud.docker.com/repository/docker/sabanski/super-chatendo" target="_blank"><img src="https://img.shields.io/docker/cloud/build/sabanski/super-chatendo.svg" alt="Super Chatendo Entertainment System" /></a>
 
 Optionally run Super Chatendo in a container using Docker.
 
