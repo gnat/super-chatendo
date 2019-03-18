@@ -28,6 +28,10 @@ h1 {
   color: #666;
 }
 
+html form input {
+  font-size: 18px;
+}
+
 .micon {
   font-family: 'Material Icons';
   font-size: 14px;
@@ -98,6 +102,7 @@ h1 {
   color: #c73a03;
   padding-left: 2px;
 }
+
 /* Chat entry CSS */
 
 .chat form {
@@ -253,3 +258,24 @@ div.emotes {
   transition: 0.5s;
 }
 
+/* Mobile / Small Screen support */
+@media (max-device-width: 950px) {
+  html .container .chat form {
+    width: 96%;
+  }
+  html .container {
+    width: 96%;
+  }
+}
+
+@media (max-device-width: 950px) and (orientation: portrait) {
+  html body, h1 {
+    font: 20px Helvetica, Arial, sans-serif;
+  }
+  html form input {
+    font-size: 20px;
+  }
+  #modal div {
+    width: 60%;
+  }
+}

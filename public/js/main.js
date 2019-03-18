@@ -135,13 +135,13 @@ $(document).ready(function() {
 	modal = document.getElementById('modal');
 	modal.style.display = "block";
 	$('#modal input').focus();
-});
 
-// Handle enter key for modal.
-$(document).keypress(function(e) {
-	if(e.which == 13) {
-		if (!username) {
-			setUsername();
+	// Handle enter key for modal.
+	$(document).keypress(function(e) {
+		if(e.which == 13) {
+			if (!username) {
+				setUsername();
+			}
 		}
-	}
+	});
 });
