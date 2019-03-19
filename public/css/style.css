@@ -227,6 +227,10 @@ html form input {
   display: inline-block;
 }
 
+#modal div form input{
+  width: 90%;
+}
+
 /* Emotes */
 
 .chat form button.emotes {
@@ -269,12 +273,6 @@ div.emotes {
 }
 
 @media (max-device-width: 950px) and (orientation: portrait) {
-  html body, h1 {
-    font: 20px Helvetica, Arial, sans-serif;
-  }
-  html form input, input:focus, input[type='text'],input[type='number'],textarea {
-    font-size: 20px !important;
-  }
   #modal div {
     width: 70%;
   }
