@@ -270,12 +270,12 @@ div.emotes {
 
 @media (max-device-width: 950px) and (orientation: portrait) {
   html body, h1 {
-    font: 20px Helvetica, Arial, sans-serif;
+    font: 22px Helvetica, Arial, sans-serif;
   }
-  html form input {
-    font-size: 20px;
+  html form input, input:focus, input[type='text'],input[type='number'],textarea {
+    font-size: 22px !important;
   }
   #modal div {
-    width: 60%;
+    width: 70%;
   }
 }
