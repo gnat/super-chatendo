@@ -10,9 +10,9 @@ const entities = new Entities();
  * @param {Object} redis Redis instance.
  * @param {Object} config Config instance.
  */
-exports.index = function(app, io, redis, config) {
-  io.sockets.on('connection', function(socket) {
-    socket.on('chatmessage', function(message) {
+exports.index = (app, io, redis, config) => {
+  io.sockets.on('connection', socket => {
+    socket.on('chatmessage', message => {
 
       // Is this a valid message?
       if (message.message == null) {
@@ -25,9 +25,9 @@ exports.index = function(app, io, redis, config) {
 
       // See which user this belongs to and send associated color.
       var tag = "user:" + socket.id;
-      redis.get(tag, function(err, result) {
+      redis.get(tag, (error, result) => {
         // Don't bother displaying message if user does not exist.
-        if (err) {
+        if (error) {
           console.log('Could not find user: ' + tag);
           return;
         }

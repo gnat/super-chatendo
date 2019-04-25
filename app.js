@@ -17,7 +17,7 @@ var app = express();
 app.set('port', config.PORT);
 
 // Listen on provided port, on all network interfaces.
-var server = app.listen(app.get('port'), function() {
+var server = app.listen(app.get('port'), () => {
   console.log('Express server listening on port ' + server.address().port);
 });
 

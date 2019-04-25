@@ -12,9 +12,9 @@ const entities = new Entities();
  * @param {Object} redis Redis instance.
  * @param {Object} config Config instance.
  */
-exports.index = function(app, io, redis, config) {
-  io.sockets.on('connection', function(socket) {
-    socket.on('useradd', function(message) {
+exports.index = (app, io, redis, config) => {
+  io.sockets.on('connection', socket => {
+    socket.on('useradd', message => {
 
       // Ensure username is filtered and it's not too long.
       message = message.substring(0, config.USERNAME_MAX_LENGTH);

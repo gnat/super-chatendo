@@ -6,9 +6,9 @@
  * @param {Object} redis Redis instance.
  * @param {Object} config Config instance.
  */
-exports.index = function(app, io, redis, config) {
-  io.sockets.on('connection', function(socket) {
-    socket.on('userlist', function(message) {
+exports.index = (app, io, redis, config) => {
+  io.sockets.on('connection', (socket) => {
+    socket.on('userlist', (message) => {
 
       console.log('Client heartbeat recieved: ' + socket.id);
 
@@ -31,13 +31,13 @@ exports.index = function(app, io, redis, config) {
             redis.get(row, (error, result) => {
               // Redis error?
               if (error) {
-                return;
+                resolve();
               }
               // Parse result to JSON.
               try {
                 var object = JSON.parse(result);
               } catch (e) {
-                return; // Issue parsing JSON.
+                resolve(); // Issue parsing JSON.
               }
               // Update our user list to send out.
               if (object.username) {

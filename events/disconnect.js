@@ -6,9 +6,9 @@
  * @param {Object} redis Redis instance.
  * @param {Object} config Config instance.
  */
-exports.index = function(app, io, redis, config) {
-  io.sockets.on('connection', function(socket) {
-    socket.on('disconnect', function() {
+exports.index = (app, io, redis, config) => {
+  io.sockets.on('connection', (socket) => {
+    socket.on('disconnect', () => {
       // Remove User from Redis.
       var tag = "user:" + socket.id;
       console.log('User disconnected: ' + tag);
