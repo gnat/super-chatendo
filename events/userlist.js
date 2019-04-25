@@ -1,5 +1,3 @@
-var async = require('async');
-
 /**
  * List all Users currently active.
  * Endpoint for Socket.io
@@ -17,42 +15,43 @@ exports.index = function(app, io, redis, config) {
       // Use this opportunity as a heartbeat to keep our own user alive in the server list.
       redis.expire("user:" + socket.id, config.USER_TIME_EXPIRE);
 
-      // Get all users in Redis.
-      redis.keys("user:*", function(err, result) {
+      // Get all users stored in our Redis.
+      redis.keys("user:*", (error, result) => {
         var users = [];
 
         // No users found?
-        if (err) {
+        if (error) {
           console.log('Warning: Client heartbeat recieved but no users found.');
           return;
         }
 
-        // Asynchronously call Redis to get all users so we can make a lobby list.
-        async.each(result, function(row, callback) {
-          redis.get(row, function(err, result) {
-            // Redis error?
-            if (err) {
-              callback();
-              return;
-            }
-            // Parse to JSON.
-            try {
-              var object = JSON.parse(result);
-            } catch (e) {
-              callback(); // Issue parsing JSON.
-              return;
-            }
-            // Update our user list to send out.
-            if (object.username) {
-              users.push(object.username);
-            }
-            callback(); // Success.
-          })
-
-        }, function() {
+        // Asynchronously query Redis for each user so we can make a definitive lobby list.
+        Promise.all(result.map(row => {
+          return new Promise(resolve => {
+            redis.get(row, (error, result) => {
+              // Redis error?
+              if (error) {
+                return;
+              }
+              // Parse result to JSON.
+              try {
+                var object = JSON.parse(result);
+              } catch (e) {
+                return; // Issue parsing JSON.
+              }
+              // Update our user list to send out.
+              if (object.username) {
+                users.push(object.username);
+              }
+              resolve(); // Success.
+            })
+          });
+        }))
+        .then(() => {
           // Send our lobby update.
           io.emit('userlist', JSON.stringify(users));
         });
+
       });
     });
   });
