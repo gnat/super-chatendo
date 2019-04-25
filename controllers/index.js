@@ -3,6 +3,6 @@
  * @param {Object} req Request instance.
  * @param {Object} res Result instance.
  */
-exports.index = function(req, res){
+exports.index = (req, res) => {
   res.render('index');
 };
