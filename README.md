@@ -15,7 +15,9 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 * Real time Twitch/Slack chat demo with lobby, emotes and colorful user sessions.
 * Backend using Redis.
 
-## Run using Bun
+## 🍞 Run using Bun
+
+Standalone using [Bun](https://github.com/oven-sh/bun). No npm or node!
 
 * `sudo apt install redis wget`
 * `git clone https://github.com/gnat/super-chatendo.git .`
@@ -27,7 +29,7 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 
 And point your browser to `http://localhost:3000`. Optionally, specify a port by supplying the `PORT` env variable.
 
-## Run using Docker
+## 🐋 Run using Docker
 
 <a href="https://hub.docker.com/r/sabanski/super-chatendo" target="_blank"><img src="https://img.shields.io/docker/cloud/build/sabanski/super-chatendo.svg" alt="Super Chatendo Entertainment System" /></a>
 
