@@ -2,9 +2,9 @@
   "name": "super-chatendo",
   "version": "1.0.0",
   "description": "Embeddable real time Twitch-Slack chat demo.",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./app.js",
+    "start": "node ./index.js",
     "test": "echo \"Error: tests currently not available\" && exit 1"
   },
   "repository": {
