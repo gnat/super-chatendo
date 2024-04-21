@@ -15,13 +15,15 @@ Uses HTML5, CSS3, Node, Redis, Web Sockets (Socket.io), Express, jQuery.
 * Real time Twitch/Slack chat demo with lobby, emotes and colorful user sessions.
 * Backend using Redis.
 
-## Run
+## Run using Bun
 
-* `sudo apt install nodejs redis`
+* `sudo apt install redis wget`
 * `git clone https://github.com/gnat/super-chatendo.git .`
 * `cd super-chatendo`
-* `npm install`
-* `npm start`
+* `wget https://github.com/oven-sh/bun/releases/download/bun-v1.1.4/bun-linux-x64.zip ; unzip -j ./bun-linux-x64.zip`
+* `chmod +x ./bun`
+* `./bun install`
+* `./bun run index.js`
 
 And point your browser to `http://localhost:3000`. Optionally, specify a port by supplying the `PORT` env variable.
 
